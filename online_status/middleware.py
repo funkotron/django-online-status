@@ -8,7 +8,7 @@ except ImportError:
     MiddlewareMixin = object
 
 
-class OnlineStatusMiddleware(object):
+class OnlineStatusMiddleware(MiddlewareMixin):
     """Cache OnlineStatus instance for an authenticated User"""
 
     def process_request(self, request):
