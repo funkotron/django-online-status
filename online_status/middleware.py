@@ -2,6 +2,11 @@ from django.core.cache import cache
 from online_status.conf import online_status_settings as config
 from online_status.status import refresh_user, refresh_users_list, OnlineStatus
 
+try:
+    from django.utils.deprecation import MiddlewareMixin
+except ImportError:
+    MiddlewareMixin = object
+
 
 class OnlineStatusMiddleware(object):
     """Cache OnlineStatus instance for an authenticated User"""
