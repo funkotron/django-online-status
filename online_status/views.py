@@ -22,7 +22,7 @@ def example(request):
     """Example view where you can see templatetags in action"""
     User = get_user_model()
     user, created = User.objects.get_or_create(username='example')
-    return render(request, 'online_status/example.html' {'example_user': user, })
+    return render(request, 'online_status/example.html', {'example_user': user, })
 
 
 def test(request):
